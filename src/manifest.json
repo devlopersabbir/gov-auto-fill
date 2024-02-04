@@ -23,10 +23,12 @@
   },
   "content_scripts": [
     {
-      "js": ["src/scripts/content.ts"],
-      "matches": ["https://dtaconnect.eohhs.mass.gov/*"]
+      "js": ["src/scripts/content.ts", "src/scripts/floating.ts"],
+      "css": ["src/styles/floating.css"],
+      "matches": ["https://dtaconnect.eohhs.mass.gov/*", "<all_urls>"],
+      "run_at": "document_end"
     }
   ],
-  "host_permissions": ["*://**"],
+  "host_permissions": ["*://**", "<all_urls>"],
   "permissions": ["tabs", "activeTab", "storage"]
 }
