@@ -1,0 +1,9 @@
+.__simple__gov__auto__fill__button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999999;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+}

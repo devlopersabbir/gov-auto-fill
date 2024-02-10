@@ -1,5 +1,6 @@
 {
-  "name": "Gov Auto Fill",
+  "name": "Simple Auto Fill",
+  "description": "Simple GOV Auto Fill Extension",
   "{{chrome}}.manifest_version": 3,
   "{{firefox}}.manifest_version": 2,
   "icons": {
@@ -9,26 +10,16 @@
     "96": "icon/96.png",
     "128": "icon/128.png"
   },
-  "{{chrome}}.action": {
-    "default_popup": "src/popup.html",
-    "default_title": "GOV Auto Fill"
-  },
-  "{{firefox}}.browser_action": {
-    "default_popup": "src/popup.html",
-    "default_title": "GOV Auto Fill"
-  },
+  "content_scripts": [
+    {
+      "js": ["src/scripts/content.ts"],
+      "css": ["src/style/content.css"],
+      "matches": ["https://dtaconnect.eohhs.mass.gov/*", "*://*/*"]
+    }
+  ],
   "background": {
     "{{chrome}}.service_worker": "src/scripts/background.ts",
     "{{firefox}}.scripts": ["src/scripts/background.ts"]
   },
-  "content_scripts": [
-    {
-      "js": ["src/scripts/content.ts", "src/scripts/floating.ts"],
-      "css": ["src/styles/floating.css"],
-      "matches": ["https://dtaconnect.eohhs.mass.gov/*", "<all_urls>"],
-      "run_at": "document_end"
-    }
-  ],
-  "host_permissions": ["*://**", "<all_urls>"],
-  "permissions": ["tabs", "activeTab", "storage"]
+  "host_permissions": ["https://dtaconnect.eohhs.mass.gov/*", "*://*/*"]
 }
