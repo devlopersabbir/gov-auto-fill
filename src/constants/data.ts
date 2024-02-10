@@ -1,4 +1,17 @@
-export const data = {
+export const data: any = {
+  firstName: "Sobuj",
+  middleName: "Vai",
+  lastName: "Developer",
+  suffix: "II",
+  dateOfBirth: {
+    day: "3",
+    month: "January",
+    year: "2000",
+  },
+  ssn: "777777",
+}
+
+export const data2 = {
   firstName: "Sobuj",
   middleName: "Vai",
   lastName: "Developer",
