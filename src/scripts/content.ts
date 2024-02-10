@@ -1,5 +1,4 @@
 import { setValue } from "../utils/functions";
-
 import { data } from "../constants/data";
 
 async function main() {
@@ -22,7 +21,7 @@ function startProcessing() {
 
 function createButton() {
   const btnEl = document.createElement("button");
-  btnEl.classList.add("__simple__gov__auto__fill__button");
+  btnEl.classList.add("_simplegovautofill_button");
   btnEl.textContent = "🔋";
 
   return btnEl;
